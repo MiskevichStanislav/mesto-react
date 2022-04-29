@@ -56,12 +56,12 @@ function App() {
   <Footer />
 
   <PopupWithForm  
-  name="formEdit" 
-  isOpen={isEditProfilePopupOpen}
-  title="Редактировать профиль" 
-  formName="formEdit"
-  buttonText="Сохранить"
-  onClose={closeAllPopups}
+    name="formEdit" 
+    isOpen={isEditProfilePopupOpen}
+    title="Редактировать профиль" 
+    formName="formEdit"
+    buttonText="Сохранить"
+    onClose={closeAllPopups}
   >
   
   <input type="text" id="name-input" name="name" className="popup__input popup__input-name" placeholder="Напишите ваше имя" minLength="2" maxLength="40" required />
@@ -72,12 +72,12 @@ function App() {
 
   
 <PopupWithForm 
-name="formAdd" 
+  name="formAdd" 
 isOpen={isEditAvatarPopupOpen}
 title="Обновить автар"
  formName="formAdd"
  buttonText="Сохранить"
-onClose={closeAllPopups}
+  onClose={closeAllPopups}
 >
   <input type="url" id="urlAvatar-input" name="link" className="popup__input popup__input-avatar" placeholder="Ссылка на фотографию" required />
   <span className="urlAvatar-input-error popup__error"></span>
@@ -86,12 +86,12 @@ onClose={closeAllPopups}
 
 
 <PopupWithForm 
-name="formAddCard" 
-isOpen={isAddPlacePopupOpen}
-title="Новое место" 
-formName="formAddCard"
-buttonText="Создать"
-onClose={closeAllPopups}
+  name="formAddCard" 
+  isOpen={isAddPlacePopupOpen}
+  title="Новое место" 
+  formName="formAddCard"
+  buttonText="Создать"
+  onClose={closeAllPopups}
 >
   <input type="text" id="card-input" name="card" className="popup__input popup__input_card-name" placeholder="Как называется ваше место" minLength="2" maxLength="30" required />
   <span className="card-input-error popup__error"></span>
@@ -102,19 +102,19 @@ onClose={closeAllPopups}
 
 <PopupWithForm
  name="formDelete" 
-title="Вы уверены?"
-id="popup__form popup__form_add" 
-formName="formDelete"
-buttonText="Да"
-onClose={closeAllPopups}
+  title="Вы уверены?"
+  id="popup__form popup__form_add" 
+  formName="formDelete"
+  buttonText="Да"
+  onClose={closeAllPopups}
 >
     <input name="formDelete" className="popup__form popup__form_add"/>
     </PopupWithForm>
 
 
 <ImagePopup 
-card={selectedCard} 
- onClose={closeAllPopups}/>
+  card={selectedCard} 
+  onClose={closeAllPopups}/>
 </div>
 );
 }
