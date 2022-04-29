@@ -21,13 +21,14 @@ function Card ({ card, onCardClick }) {
         <img className="pictures__images" 
         alt={card.name} 
         src={card.link} 
-        onClick={handleClick}/>
+        onClick={handleClick}
+        />
         <div className="pictures__description">
             <h2 className="pictures__title">{card.name}</h2>
             <div className="pictures__like-box">
                  <button className="pictures__like" type="button"></button>
-                <span className="pictures__like-count">{card.likes.length}</span></div>
-
+                <span className="pictures__like-count">{card.likes.length}</span>
+                </div>
         </div>
     </li>
 

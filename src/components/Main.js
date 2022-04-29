@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { api } from "../utils/Api";
+import { api } from "../utils/Api.js";
 import Card from "./Card.js";
 
 function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
@@ -21,7 +21,7 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
 
   useEffect(() => {
     api
-      .getInitialCards()
+      .getCards()
       .then((cardList) => {
         const usersCard = cardList.map(card => {
           return {

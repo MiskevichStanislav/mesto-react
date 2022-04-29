@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Header from "./Header";
-import Main from "./Card";
-import Footer from "./Footer";
-import PopupWithForm from "./PopupWithForm";
-import ImagePopup from "./ImagePopup";
+import { useState } from "react";
+import Header from "./Header.js";
+import Main from "./Main.js";
+import PopupWithForm from "./PopupWithForm.js";
+import ImagePopup from "./ImagePopup.js";
+import Footer from "./Footer.js";
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
-  const [selectedCard, setSelectedCard] = useState({});
+  const [selectedCard, setSelectedCard] = useState(null);
 
   const handleEditAvatarClick = () => {
     setIsEditAvatarPopupOpen(true);
@@ -42,7 +42,7 @@ function App() {
 
   return (
 
-    <body className="page">
+    <div className="page">
 
     <Header />
 
@@ -52,6 +52,7 @@ function App() {
     onAddPlace={handleAddPlaceClick} 
     onCardClick={handleCardClick}
     />
+    
   <Footer />
 
   <PopupWithForm  
@@ -65,7 +66,7 @@ function App() {
   
   <input type="text" id="name-input" name="name" className="popup__input popup__input-name" placeholder="Напишите ваше имя" minLength="2" maxLength="40" required />
   <span className="name-input-error popup__error"></span>
-  <input type="text" id="detail-input" name="detail" className="popup__input popup__input-job" placeholder="Расскажите о себе" minLength="2" maxLength="200" required />
+  <input type="text" id="detail-input" name="detail" className="popup__input popup__input-detail" placeholder="Расскажите о себе" minLength="2" maxLength="200" required />
   <span className="detail-input-error popup__error"></span>
   </PopupWithForm>
 
@@ -114,7 +115,7 @@ onClose={closeAllPopups}
 <ImagePopup 
 card={selectedCard} 
  onClose={closeAllPopups}/>
-</body>
+</div>
 );
 }
 export default App;
