@@ -9,9 +9,8 @@
  */
 
  html {
-    line-height: 1.15; /* 1 */
+    line-height: 1.15;
     -webkit-text-size-adjust: 100%;
-    background-color: black; /* 2 */
   }
   
   /* Sections
