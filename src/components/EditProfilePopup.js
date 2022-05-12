@@ -48,7 +48,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
         minLength="2"
         maxLength="40"
         required
-        defaultValue={name}
+        value={name}
         onChange={handleNameChange}
       />
       <span className="name-input-error popup__error"></span>
@@ -61,7 +61,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
         minLength="2"
         maxLength="200"
         required
-        defaultValue={description}
+        value={description}
         onChange={handleDetailChange}
       />
       <span className="detail-input-error popup__error"></span>
