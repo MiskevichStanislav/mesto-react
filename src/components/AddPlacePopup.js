@@ -54,7 +54,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
         className="popup__input popup__input-link"
         placeholder="Ссылка на фотографию"
         required
-        value={name}
+        value={link}
         onChange={handleLinkChange}
       />
       <span className="url-input-error popup__error"></span>
