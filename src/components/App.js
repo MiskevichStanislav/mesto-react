@@ -120,7 +120,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <body className="page">
+      <>
         <Header />
         <Main
           onEditAvatar={handleEditAvatarClick}
@@ -162,7 +162,7 @@ function App() {
 
     
         <ImagePopup selectedCard={selectedCard} onClose={closeAllPopups} />
-      </body>
+      </>
     </CurrentUserContext.Provider>
   );
 }
