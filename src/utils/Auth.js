@@ -1,28 +1,24 @@
-const API_URL = "https://auth.nomoreparties.co";
+const BASE_URL = "https://auth.nomoreparties.co";
+function cheeckResponse(promise) {
+  return promise.then((res) => {
+    return (res.status === 200) ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
+  })
+  }
 
-export const register = ({password, email}) => {
-  return fetch(`${API_URL}/signup`, {
+export const register = (email, password) => {
+
+  console.log('register:', email, password)
+  return  fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {
+      'Accept': 'application/json',
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      password: password,
-      email: email,
-    }),
-  }).then(checkResponse)
-}; 
-
-export const login = () => {
-
-};
-
-
-const checkResponse =(response) => {
-    if(response.ok) {
-        return response.json()
-    }
-    return response.json().then(error => {
-        throw error.error;
-    })
-} 
+    
+    body: JSON.stringify({email, password})
+  })
+  
+  .then(res => {
+    console.log('response', res.json())
+  })
+}

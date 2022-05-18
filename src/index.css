@@ -53,5 +53,16 @@
 @import url(./blocks/popup/__picture-open/popup__picture-open.css);
 @import url(./blocks/popup/__photo-title/popup__photo-title.css);
 @import url(./blocks/popup/__photo/popup__photo.css);
+@import url(../src/blocks/popup/_type/popup_type_info-toltip.css);
+
+@import url(../src/blocks/infoTooltip/infoTooltip.css);
+@import url(../src/blocks/infoTooltip/__imge/infoTooltip__image.css);
+@import url(../src/blocks/infoTooltip/__text/infoTooltip__text.css);
 
 @import url(../src/blocks/register/register.css)
+@import url(../src/blocks/register/__content/register__content.css);
+@import url(../src/blocks/register/__title/register__title.css);
+@import url(../src/blocks/register/__form-field/register__form-field.css);
+@import url(../src/blocks/register/__button/register__button.css);
+@import url(../src/blocks/register/__already/register__already.css);
+@import url(../src/blocks/register/__log-in/register__log-in.css);

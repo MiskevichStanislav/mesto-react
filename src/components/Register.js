@@ -1,56 +1,69 @@
-import { Link, withRouter } from "react-router-dom";
-import { React, useState } from "react";
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 const Register = ({ onRegister }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+  });
 
-  function handleEmailChange(evt) {
-    setEmail(evt.target.value);
-  }
+  const handleChange = (e) => {
+    const { value, name } = e.target;
+    const { name, value } = e.target;
+    setState({ ...state, [name]: value });
+  };
 
-  function handlePasswordChange(evt) {
-    setPassword(evt.target.value);
-  }
-
-  function handleSubmit(evt) {
-    evt.preventDefault();
-    onRegister(email, password);
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("логин:", state);
+    if (onRegister) {
+      const {email, password} = state;
+      onRegister({email, password});
+    } 
+    console.log("state:", state);
+      
+      onRegister({
+        email: state.email, 
+        password: state.password});
   }
 
   return (
     <div className="register">
-      <div className="register__content">
-        <h3 className="register__title">Регистрация</h3>
-        <form className="register__form" type="submit" onSubmit={handleSubmit}>
-          <input
-            className="register__form-field"
-            type="email"
-            placeholder="Email"
-            onChange={handleEmailChange}
-            required
-          />
-          <input
-            className="register__form-field"
-            type="password"
-            placeholder="Пароль"
-            onChange={handlePasswordChange}
-            required
-          />
-          <button className="register__button button-hover">
-            Зарегистрироваться
-          </button>
-        </form>
-        <span className="register__already">
-          Уже зарегистрированы?
-          <Link to="/sign-in" className="register__log-in button-hover">
-            {" "}
-            Войти
-          </Link>
-        </span>
+      <p className="register__title">Регистрация</p>
+      <form onSubmit={handleSubmit} className="login__form">
+        <input
+          className="register__input"
+          required
+          id="email"
+          name="email"
+          type="email"
+          value={state.email || ""}
+          onChange={handleChange}
+          placeholder="Email"
+        />
+        <span id="register-email-error" className="error"></span>
+        <input
+          className="register__input"
+          required
+          id="password"
+          name="password"
+          type="password"
+          value={state.password || ""}
+          onChange={handleChange}
+          placeholder="Пароль"
+          autoComplete="on"
+        />
+        <span id="register-password-error" className="error"></span>
+
+        <button type="submit" className="register__button-container">
+          Зарегистрироваться
+        </button>
+      </form>
+      <div className="register__signin">
+        <Link to="/sign-in" className="register__login-link">
+          Уже зарегистрированы? Войти
+        </Link>
       </div>
     </div>
   );
 };
-
-export default withRouter(Register);
+export default Register;
